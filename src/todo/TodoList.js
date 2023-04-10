@@ -4,6 +4,7 @@ import TodoItemCreator from "./TodoItemCreator";
 
 import TodoListFilters, { todoListFiltersState } from "./TodoListFilters";
 import TodoItem from "./TodoItem";
+import TodoListStats from "./TodoListStats";
 
 // 1. Atoms 를 정의한다.
 // atom (state) 을 정의할 때는  atoms() 를 활용한다.
@@ -44,6 +45,9 @@ const TodoList = () => {
   const todoList = useRecoilValue(filteredTodoListState);
   return (
     <>
+      {/* 통계기능 */}
+      <TodoListStats />
+      {/* 필터기능 */}
       <TodoListFilters />
       {/* 목록생성 */}
       <TodoItemCreator />
